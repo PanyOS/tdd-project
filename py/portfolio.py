@@ -1,6 +1,8 @@
 import functools
 import operator
 
+from money import Money
+
 class Portfolio:
     def __init__(self):
         self.moneys = []
