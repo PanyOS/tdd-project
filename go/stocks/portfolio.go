@@ -3,11 +3,17 @@ package stocks
 type Portfolio []Money
 
 func convert(money Money, currency string) float64 {
-	eurToUsd := 1.2
+	exchangeRates := map[string]float64{
+		"EUR->USD": 1.2,
+		"USD->KRW": 1100,
+	}
+
 	if money.currency == currency {
 		return money.amount
 	}
-	return money.amount * eurToUsd
+
+	key := money.currency + "->" + currency
+	return money.amount * exchangeRates[key]
 }
 
 func (p Portfolio) Add(money Money) Portfolio {
