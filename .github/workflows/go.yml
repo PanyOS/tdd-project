@@ -23,5 +23,6 @@ jobs:
         export GO111MODULE="on"
         export GOPATH=""
         cd go
-        go test -v ./..
+        echo $(ls)
+        go test -v .
       shell: bash
