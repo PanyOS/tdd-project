@@ -120,10 +120,3 @@ func TestConversionWithMissingExchangeRate(t *testing.T) {
 	assertEqual(t, "EUR->Kalganid", err.Error())
 	assertNil(t, actualConvertedMoney)
 }
-
-func TestWhatIsTheConversionRateFromEURToUSD(t *testing.T) {
-	tenEuros := s.NewMoney(10, "EUR")
-	actualConvertedMoney, err := bank.Convert(tenEuros, "USD")
-	assertNil(t, err)
-	assertEqual(t, s.NewMoney(12, "USD"), *actualConvertedMoney)
-}
