@@ -11,7 +11,7 @@ jobs:
         platform: [ubuntu-lastest, macos-lastest, windows-lastest]
     runs-on: ${{ matrix.platform }}
     steps:
-    - names: Set up Python ${{ matrix.node-version }}
+    - name: Set up Python ${{ matrix.node-version }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
