@@ -28,7 +28,7 @@ class Portfolio:
             except Exception as ex:
                 failures.append(ex)
 
-        if len(failures) == 0:
+        if not failures:
             return Money(total, currency)
 
         failureMessage = failureMessage = ",".join(f.args[0] for f in failures)

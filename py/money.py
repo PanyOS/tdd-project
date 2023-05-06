@@ -9,6 +9,12 @@ class Money:
     def __eq__(self, other: object) -> bool:
         return self.amount == other.amount and self.currency == other.currency
 
+    def __add__(self, a):
+        if a is not None and self.currency == a.currency:
+            return Money(self.amount + a.amount, self.currency)
+        else:
+            return None
+
     def times(self, multiplier):
         return Money(self.amount * multiplier, self.currency)
     
